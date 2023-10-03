@@ -1,129 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Kanbas</title>
-        <style>
-            td, th {
-                border: 1px solid black;
-            }
-        </style>
-    </head>
-    <body>
-        <table style="width: 100%;">
-            <thead>
-                <td style="vertical-align: top; border: none;">
-                    <ul style="margin: 0;">
-                        <li><a href="">Account</a></li>
-                        <li><a href="">Dashboard</a></li>
-                        <li><a href="">Courses</a></li>
-                        <li><a href="">Calendar</a></li>
-                        <li><a href="">Inbox</a></li>
-                        <li><a href="">History</a></li>
-                        <li><a href="">Studio</a></li>
-                        <li><a href="">Commons</a></li>
-                        <li><a href="">Help</a></li>
-                    </ul>
-                </td>
-                <td style="vertical-align: top; border: none;">
-                    <ul style="margin: 0">
-                        <li><a href="../home.html">Home</a></li>
-                        <li><a href="">Modules</a></li>
-                        <li><a href="">Piazza</a></li>
-                        <li><a href="">Zoom Meetings</a></li>
-                        <li><a href="index.html">Assignments</a></li>
-                        <li><a href="">Quizzes</a></li>
-                        <li><a href="../grades.html">Grades</a></li>
-                        <li><a href="">People</a></li>
-                        <li><a href="">Panopto Video</a></li>
-                        <li><a href="">Discussions</a></li>
-                        <li><a href="">Announcements</a></li>
-                        <li><a href="">Pages</a></li>
-                        <li><a href="">Files</a></li>
-                        <li><a href="">Rubrics</a></li>
-                        <li><a href="">Outcomes</a></li>
-                        <li><a href="">Collaborations</a></li>
-                        <li><a href="">Syllabus</a></li>
-                        <li><a href="">Settings</a></li>
-                    </ul>
-                </td>
-                <td style="vertical-align: top; border: none;">
-                    <div>
-                        <select>
-                            <option value="Delete">Delete everything</option>
-                            <option selected value="Export">Speed Grader</option>
-                        </select>
-                    </div>
-                    <hr>
-                    <h3>Assignment Name</h3>
-                    <input type="text" value="A1 - ENV + HTML" name="" id=""><br><br>
+	<head>
+		<title>Kanbas</title>
+		<style>
+			td,
+			th {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<table style="width: 100%">
+			<thead>
+				<td style="vertical-align: top; border: none">
+					<ul style="margin: 0">
+						<li><a href="">Account</a></li>
+						<li><a href="">Dashboard</a></li>
+						<li><a href="">Courses</a></li>
+						<li><a href="">Calendar</a></li>
+						<li><a href="">Inbox</a></li>
+						<li><a href="">History</a></li>
+						<li><a href="">Studio</a></li>
+						<li><a href="">Commons</a></li>
+						<li><a href="">Help</a></li>
+					</ul>
+				</td>
+				<td style="vertical-align: top; border: none">
+					<ul style="margin: 0">
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="">Modules</a></li>
+						<li><a href="">Piazza</a></li>
+						<li><a href="">Zoom Meetings</a></li>
+						<li><a href="index.html">Assignments</a></li>
+						<li><a href="">Quizzes</a></li>
+						<li><a href="../grades.html">Grades</a></li>
+						<li><a href="">People</a></li>
+						<li><a href="">Panopto Video</a></li>
+						<li><a href="">Discussions</a></li>
+						<li><a href="">Announcements</a></li>
+						<li><a href="">Pages</a></li>
+						<li><a href="">Files</a></li>
+						<li><a href="">Rubrics</a></li>
+						<li><a href="">Outcomes</a></li>
+						<li><a href="">Collaborations</a></li>
+						<li><a href="">Syllabus</a></li>
+						<li><a href="">Settings</a></li>
+					</ul>
+				</td>
+				<td style="vertical-align: top; border: none">
+					<div>
+						<select>
+							<option value="Delete">Delete everything</option>
+							<option selected value="Export">Speed Grader</option>
+						</select>
+					</div>
+					<hr />
+					<h3>Assignment Name</h3>
+					<input type="text" value="A1 - ENV + HTML" name="" id="" /><br /><br />
 
-                    <textarea name="" id="" cols="30" rows="3">This is a description of the assignment</textarea><br><br>
+					<textarea name="" id="" cols="30" rows="3">This is a description of the assignment</textarea><br /><br />
 
-                    <label for="points">Points</label><br>
-                    <input type="text" name="" id="points" value="100"><br><br>
+					<label for="points">Points</label><br />
+					<input type="text" name="" id="points" value="100" /><br /><br />
 
-                    <label for="assignment_group">Assignment Group</label><br>
-                    <select name="" id="assignment_group">
-                        <option value="">Assignments</option>
-                        <option value="">Quizzes</option>
-                    </select><br><br>
+					<label for="assignment_group">Assignment Group</label><br />
+					<select name="" id="assignment_group">
+						<option value="">Assignments</option>
+						<option value="">Quizzes</option></select
+					><br /><br />
 
-                    <label for="dg">Display grade as</label><br>
-                    <select name="" id="dg">
-                        <option value="">Percentage</option>
-                        <option value="">Absolute</option>
-                    </select><br><br>
+					<label for="dg">Display grade as</label><br />
+					<select name="" id="dg">
+						<option value="">Percentage</option>
+						<option value="">Absolute</option></select
+					><br /><br />
 
-                    <label for="ST">Submission Type</label><br>
-                    <select name="" id="ST">
-                        <option value="">Online</option>
-                        <option value="">In person</option>
-                        <option value="">Fax</option>
-                        <option value="">Pigeon Mail</option>
-                    </select><br><br>
+					<label for="ST">Submission Type</label><br />
+					<select name="" id="ST">
+						<option value="">Online</option>
+						<option value="">In person</option>
+						<option value="">Fax</option>
+						<option value="">Pigeon Mail</option></select
+					><br /><br />
 
-                    <span>Online Entry Options</span><br>
-                    <input type="checkbox" name="" id=""> Text Entry <br>
-                    <input type="checkbox" name="" id=""> Website URL <br>
-                    <input type="checkbox" name="" id=""> Media Recordings <br>
-                    <input type="checkbox" name="" id=""> Student Annotations <br>
-                    <input type="checkbox" name="" id=""> File Uploads <br><br>
+					<span>Online Entry Options</span><br />
+					<input type="checkbox" name="" id="" /> Text Entry <br />
+					<input type="checkbox" name="" id="" /> Website URL <br />
+					<input type="checkbox" name="" id="" /> Media Recordings <br />
+					<input type="checkbox" name="" id="" /> Student Annotations <br />
+					<input type="checkbox" name="" id="" /> File Uploads <br /><br />
 
-                    <label for="sa">Submission attempts</label><br>
-                    <select name="" id="sa">
-                        <option value="">Unlimited</option>
-                        <option value="">Limited</option>
-                    </select><br><br>
+					<label for="sa">Submission attempts</label><br />
+					<select name="" id="sa">
+						<option value="">Unlimited</option>
+						<option value="">Limited</option></select
+					><br /><br />
 
-                    <label for="pr">Plagiarism Review</label><br>
-                    <select name="" id="pr">
-                        <option value="">None</option>
-                        <option value="">Strict</option>
-                    </select><br><br>
+					<label for="pr">Plagiarism Review</label><br />
+					<select name="" id="pr">
+						<option value="">None</option>
+						<option value="">Strict</option></select
+					><br /><br />
 
-                    <span>Group assignment</span><br>
-                    <input type="checkbox" name="" id=""> This is a group assignment <br><br>
+					<span>Group assignment</span><br />
+					<input type="checkbox" name="" id="" /> This is a group assignment <br /><br />
 
-                    <span>Peer reviews</span><br>
-                    <input type="checkbox" name="" id=""> Require peer reviews <br><br>
+					<span>Peer reviews</span><br />
+					<input type="checkbox" name="" id="" /> Require peer reviews <br /><br />
 
-                    <span>Assign</span><br>
-                    <label for="assign">Assign to</label><br>
-                    <input type="text" name="" id="assign" value="everyone"><br><br>
+					<span>Assign</span><br />
+					<label for="assign">Assign to</label><br />
+					<input type="text" name="" id="assign" value="everyone" /><br /><br />
 
-                    <label for="due">Due</label><br>
-                    <input type="date" name="" id="due"><br><br>
+					<label for="due">Due</label><br />
+					<input type="date" name="" id="due" /><br /><br />
 
-                    <label for="due">Available from</label><br>
-                    <input type="date" name="" id="due"><br><br>
+					<label for="due">Available from</label><br />
+					<input type="date" name="" id="due" /><br /><br />
 
-                    <label for="due">Available until</label><br>
-                    <input type="date" name="" id="due"><br><br>
+					<label for="due">Available until</label><br />
+					<input type="date" name="" id="due" /><br /><br />
 
-                    <a href="index.html"><button>Cancel</button></a>
-                    <a href="index.html"><button>Save</button></a>
-                </td>
-            </thead>
-        </table>
-    </body>
+					<a href="index.html"><button>Cancel</button></a>
+					<a href="index.html"><button>Save</button></a>
+				</td>
+			</thead>
+		</table>
+	</body>
 </html>
