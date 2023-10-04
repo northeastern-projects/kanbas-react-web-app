@@ -16,6 +16,25 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
+		<style>
+			.btn-primary.override-bs {
+				background-color: #a90dfd;
+
+				border-color: #fd0d51;
+
+				border-width: 10px;
+
+				border-radius: 20px;
+
+				border-style: dashed;
+
+				font-size: 2em;
+
+				font-weight: bolder;
+			}
+		</style>
+
 		<title>Bootstrap</title>
 	</head>
 
@@ -366,7 +385,11 @@
 			</form>
 
 			<!-- 3.2.4.7 -->
-			<!-- TODO: this -->
+			<div class="container-fluid">
+				<button class="btn btn-primary">Regular Bootstrap Button</button>
+				<br />
+				<button class="btn btn-primary override-bs">Overriden Button</button>
+			</div>
 
 			<!-- 3.2.5.1 -->
 			<h2><a href="https://getbootstrap.com/docs/5.1/components/navs-tabs/">Tabs</a></h2>
@@ -386,7 +409,19 @@
 			</ul>
 
 			<!-- 3.2.5.2 -->
-			<!-- TODO -->
+			<ul class="nav nav-pills mb-2">
+				<li class="nav-item">
+					<a class="nav-link active" href=""> Home</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href=""> Profile</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href=""> Bookmarks</a>
+				</li>
+			</ul>
 
 			<!-- 3.2.5.3 -->
 			<h2>
