@@ -1,0 +1,137 @@
+/* TOP BAR */
+
+.wd-top-bar {
+	padding-top: 15px;
+	padding-right: 15px;
+}
+
+.wd-top-bar > * {
+	display: inline;
+	vertical-align: middle;
+}
+
+.wd-top-bar-right {
+	float: right;
+}
+
+.wd-button-group {
+	float: right;
+}
+
+/* SIDEBAR */
+
+.wd-sidebar {
+	background-color: black;
+	width: 80px;
+	height: 100vh;
+}
+
+.wd-sidebar > div {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	color: white;
+}
+
+.wd-sidebar > div > * {
+	display: block;
+}
+
+.wd-sidebar i {
+	color: red;
+}
+
+.wd-sidebar a {
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.wd-sidebar div.selected {
+	background-color: white;
+}
+
+.wd-sidebar div.selected > i {
+	color: gray;
+}
+
+.wd-sidebar div.selected > a {
+	color: red;
+}
+
+/* MENU */
+
+.wd-menu > div > * {
+	display: block;
+	padding-left: 5px;
+}
+
+.wd-menu a {
+	color: red;
+	text-decoration: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.wd-menu div.selected {
+	border-left: 3px solid black;
+}
+
+.wd-menu div.selected > a {
+	color: black;
+}
+
+/* CONTENT */
+
+.wd-list-indent {
+	padding-left: 50px;
+}
+
+.wd-list-container > a {
+	color: red;
+	text-decoration: none;
+}
+
+.wd-list-container {
+	width: 100%;
+}
+
+.wd-list-container > .wd-right {
+	float: right;
+}
+
+.wd-list-container i.fa-circle-check {
+	color: lightgreen;
+}
+
+/* RIGHT COLUMN */
+
+.wd-text-left > .btn {
+	text-align: left;
+}
+
+.wd-todo {
+	width: 100%;
+	padding-right: 15px;
+}
+
+.wd-todo > .row {
+	margin-bottom: 10px;
+}
+
+.wd-todo a {
+	color: red;
+	text-decoration: none;
+}
+
+.wd-todo a {
+	font-size: 14px;
+}
+
+.wd-todo span {
+	font-size: 12px;
+}
+
+.wd-todo i {
+	color: red;
+}
