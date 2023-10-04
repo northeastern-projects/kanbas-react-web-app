@@ -83,8 +83,8 @@
 
 /* CONTENT */
 
-.wd-list-indent {
-	padding-left: 50px;
+.wd-list-item {
+	border-left: 5px solid green !important;
 }
 
 .wd-list-container > a {
@@ -96,13 +96,8 @@
 	width: 100%;
 }
 
-.wd-list-container > .wd-right {
-	float: right;
-}
-
 .wd-list-container i.fa-circle-check {
 	color: green;
-	margin-right: 15px;
 }
 
 /* RIGHT COLUMN */
