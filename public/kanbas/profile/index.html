@@ -1,58 +1,106 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./index.css" />
 		<title>Kanbas</title>
-		<style>
-			td,
-			th {
-				border: 1px solid black;
-			}
-		</style>
 	</head>
-	<body>
-		<table style="width: 100%">
-			<thead>
-				<td style="vertical-align: top; border: none">
-					<ul style="margin: 0">
-						<li><a href="">Account</a></li>
-						<li><a href="">Dashboard</a></li>
-						<li><a href="">Courses</a></li>
-						<li><a href="">Calendar</a></li>
-						<li><a href="">Inbox</a></li>
-						<li><a href="">History</a></li>
-						<li><a href="">Studio</a></li>
-						<li><a href="">Commons</a></li>
-						<li><a href="">Help</a></li>
-					</ul>
-				</td>
-				<td style="vertical-align: top; border: none">
-					<ul style="margin: 0">
-						<li><a href="">Notifications</a></li>
-						<li><a href="index.html">Profile</a></li>
-						<li><a href="">Files</a></li>
-						<li><a href="">Settings</a></li>
-						<li><a href="">ePortfolios</a></li>
-						<li><a href="">Shared Content</a></li>
-						<li><a href="">The Hub</a></li>
-						<li><a href="">Qwickly Course Tools</a></li>
-						<li><a href="">Global announcements</a></li>
-					</ul>
-				</td>
-				<td style="vertical-align: top; border: none">
-					<p>Rahul Rao's profile</p>
+
+	<body style="overflow-x: hidden">
+		<div class="row">
+			<div class="col-auto">
+				<div class="wd-sidebar">
+					<div>
+						<h1>RR</h1>
+					</div>
+					<div class="selected">
+						<i class="fas fa-circle-user fa-2x"></i>
+						<a href="./index.html">Account</a>
+					</div>
+					<div><i class="fas fa-gauge fa-2x"></i><a href="../dashboard.html">Dashboard</a></div>
+					<div><i class="fas fa-book fa-2x"></i><a href="">Courses</a></div>
+					<div><i class="fas fa-calendar-days fa-2x"></i><a href="">Calendar</a></div>
+					<div><i class="fas fa-envelope-open-text fa-2x"></i><a href="">Inbox</a></div>
+					<div><i class="fas fa-clock-rotate-left fa-2x"></i><a href="">History</a></div>
+					<div><i class="fas fa-person-chalkboard fa-2x"></i><a href="">Studio</a></div>
+					<div><i class="fas fa-arrow-up-from-bracket fa-rotate-90 fa-2x"></i><a href="">Commons</a></div>
+					<div><i class="fas fa-circle-question fa-2x"></i><a href="">Help</a></div>
+				</div>
+			</div>
+			<div class="col">
+				<div>
+					<div class="wd-top-bar">
+						<i class="fas fa-bars fa-2x"></i>
+						<h4 style="margin-left: 25px">Rahul Rao's Profile</h4>
+					</div>
 					<hr />
-					<h3>
-						Rahul Rao
-						<a href="edit.html"><button>Edit Profile</button></a>
-					</h3>
-					<h4>Contact</h4>
-					<p>No registered devices. You can add some on the <a href="">settings</a> page.</p>
-					<h4>Biography</h4>
-					<p>Just a student.</p>
-					<h4>Links</h4>
-					<p><a href="youtube.com">Youtube</a></p>
-				</td>
-			</thead>
-		</table>
+				</div>
+				<div class="row">
+					<div class="col-auto" style="padding: 5px">
+						<div class="wd-menu">
+							<div><a href="">Notifications</a></div>
+							<div class="selected"><a href="./index.html">Profile</a></div>
+							<div><a href="">Files</a></div>
+							<div><a href="">Settings</a></div>
+							<div><a href="">ePortfolios</a></div>
+							<div><a href="">Shared Content</a></div>
+							<div><a href="">The Hub</a></div>
+							<div><a href="">Qwickly Course Tools</a></div>
+							<div><a href="">Global announcements</a></div>
+						</div>
+					</div>
+					<div class="col">
+						<img
+							src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
+							alt=""
+							style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 30px"
+						/>
+						<div class="wd-profile-info" style="margin-left: 30px">
+							<h3>Rahul Rao</h3>
+							<br />
+
+							<h4>Contact</h4>
+							<p>No registered services. You can add some on the <a href="">settings</a> page.</p>
+							<br />
+
+							<h4>Biography</h4>
+							<p>A student</p>
+							<br />
+
+							<h4>Links</h4>
+							<p>
+								<i class="fas fa-link"></i> <a href="youtube.com">YouTube <i class="fas fa-up-right-from-square"></i></a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-auto" style="margin-right: 15px">
+						<a href="./edit.html"
+							><button class="btn btn-light"><i class="fas fa-pencil"></i> Edit Profile</button></a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
