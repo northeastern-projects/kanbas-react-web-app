@@ -1,19 +1,23 @@
-// import logo from './logo.svg';
-import './App.css';
+import { HashRouter } from 'react-router-dom/dist';
+import Labs from './labs';
 
 function App() {
 	return (
-		<div className="App">
-			{/* <header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-					Learn React
-				</a>
-			</header> */}
-		</div>
+		<HashRouter>
+			<div className="App">
+				<div>
+					<div class="container" style={{ paddingTop: '25px' }}>
+						<h1>Web Development - Rahul Rao</h1>
+						<list class="list-group" style={{ paddingTop: '25px' }}>
+							<li class="list-group-item">
+								<a href="/kanbas/home.html">Kanbas</a>
+							</li>
+						</list>
+						<Labs />
+					</div>
+				</div>
+			</div>
+		</HashRouter>
 	);
 }
 
