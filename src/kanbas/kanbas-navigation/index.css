@@ -1,0 +1,41 @@
+/* SIDEBAR */
+
+.wd-sidebar {
+	background-color: black;
+	width: 80px;
+	height: 100vh;
+	margin-right: 30px;
+}
+
+.wd-sidebar > div {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	color: white;
+}
+
+.wd-sidebar > div > * {
+	display: block;
+}
+
+.wd-sidebar .i {
+	color: red;
+}
+
+.wd-sidebar .a {
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.wd-sidebar div.selected {
+	background-color: white;
+}
+
+.wd-sidebar div.selected > .i {
+	color: gray;
+}
+
+.wd-sidebar div.selected > .a {
+	color: red;
+}
