@@ -1,0 +1,29 @@
+.wd-text-left > .btn {
+	text-align: left;
+}
+
+.wd-todo {
+	width: 100%;
+	padding-right: 15px;
+}
+
+.wd-todo > .row {
+	margin-bottom: 10px;
+}
+
+.wd-todo a {
+	color: red;
+	text-decoration: none;
+}
+
+.wd-todo a {
+	font-size: 14px;
+}
+
+.wd-todo span {
+	font-size: 12px;
+}
+
+.wd-todo i {
+	color: red;
+}

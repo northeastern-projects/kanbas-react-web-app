@@ -5,11 +5,11 @@ import Courses from './courses';
 
 function Kanbas() {
 	return (
-		<div className="d-flex">
-			<div>
+		<div className="row">
+			<div className="col-auto">
 				<KanbasNavigation />
 			</div>
-			<div>
+			<div className="col">
 				<Routes>
 					<Route path="/" element={<Navigate to="dashboard" />} />
 					<Route path="account" element={<h1>Account</h1>} />

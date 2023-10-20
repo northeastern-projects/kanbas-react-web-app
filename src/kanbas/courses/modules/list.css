@@ -1,0 +1,39 @@
+.wd-list-indent {
+	padding-left: 50px;
+}
+
+.wd-list-container > a {
+	color: red;
+	text-decoration: none;
+}
+
+.wd-list-container {
+	width: 100%;
+}
+
+.wd-list-container > .wd-right {
+	float: right;
+}
+
+.wd-list-container .check-icon {
+	color: green;
+	margin-right: 15px;
+}
+
+.wd-top-bar {
+	padding-top: 15px;
+	padding-right: 15px;
+}
+
+.wd-top-bar > * {
+	display: inline;
+	vertical-align: middle;
+}
+
+.wd-top-bar-right {
+	float: right;
+}
+
+.wd-button-group {
+	float: right;
+}
