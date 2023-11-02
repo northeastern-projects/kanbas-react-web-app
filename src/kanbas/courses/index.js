@@ -1,4 +1,3 @@
-import db from '../db';
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,10 +9,10 @@ import Assignments from './assignments';
 import AssignmentEditor from './assignments/editor';
 import Grades from './grades';
 
-function Courses() {
+function Courses({ courses }) {
 	const { courseId } = useParams();
 	const { pathname } = useLocation();
-	const course = db.courses.find((course) => course._id === courseId);
+	const course = courses.find((course) => course._id === courseId);
 
 	return (
 		<div>

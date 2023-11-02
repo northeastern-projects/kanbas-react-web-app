@@ -1,17 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import db from '../../db';
 import './list.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck, faEllipsisVertical, faPlus, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faCircleCheck, faEllipsisVertical, faPlus, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 function ModuleList() {
 	const { courseId } = useParams();
-	const modules = db.modules;
+	const [modules, setModules] = useState(db.modules);
+	const [module, setModule] = useState({
+		name: 'New Module',
+		description: 'New Description',
+		course: courseId
+	});
+
+	const addModule = () => {
+		setModules([...modules, { ...module, _id: new Date().getTime().toString() }]);
+	};
+
+	const deleteModule = (moduleId) => {
+		setModules(modules.filter((module) => module._id !== moduleId));
+	};
+
+	const updateModule = () => {
+		setModules(
+			modules.map((m) => {
+				if (m._id === module._id) {
+					return module;
+				} else {
+					return m;
+				}
+			})
+		);
+	};
 
 	return (
 		<div>
-			<div className="wd-button-group">
+			<div className="wd-button-group d-flex flex-row">
 				<button className="btn btn-light">Collapse All</button>
 				<button className="btn btn-light">View Progress</button>
 				<select className="btn btn-light">
@@ -21,13 +46,34 @@ function ModuleList() {
 						Publish All
 					</option>
 				</select>
-				<div className="btn-group" role="group">
-					<button className="btn btn-danger">
-						<FontAwesomeIcon icon={faPlus} /> Module
-					</button>
-					<button className="btn btn-light">
-						<FontAwesomeIcon icon={faEllipsisVertical} />
-					</button>
+				<div className="d-flex flex-row">
+					<input
+						type="text"
+						onChange={(e) => setModule({ ...module, name: e.target.value })}
+						value={module.name}
+						className="form-control"
+						placeholder="Module Name"
+						style={{ width: '200px', marginRight: '5px' }}
+					/>
+					<input
+						type="text"
+						onChange={(e) => setModule({ ...module, description: e.target.value })}
+						value={module.description}
+						className="form-control"
+						placeholder="Module Description"
+						style={{ width: '200px', marginRight: '5px' }}
+					/>
+					<div className="btn-group" role="group">
+						<button onClick={addModule} className="btn btn-danger">
+							<FontAwesomeIcon icon={faPlus} /> Add
+						</button>
+						<button onClick={updateModule} className="btn btn-primary">
+							<FontAwesomeIcon icon={faCheck} /> Update
+						</button>
+						<button className="btn btn-light">
+							<FontAwesomeIcon icon={faEllipsisVertical} />
+						</button>
+					</div>
 				</div>
 			</div>
 			<br className="mt-3" />
@@ -39,9 +85,17 @@ function ModuleList() {
 					.map((module, index) => (
 						<div key={index} className="accordion-item">
 							<h2 className="accordion-header">
-								<button className="accordion-button bg-light" type="button">
+								<div className="accordion-button bg-light d-flex flex-row">
 									<span>{module.name}</span>
-								</button>
+									<div style={{ position: 'absolute', right: '50px' }}>
+										<button className="btn btn-danger" onClick={() => deleteModule(module._id)}>
+											Delete
+										</button>
+										<button className="btn btn-success" style={{ marginLeft: '5px' }} onClick={() => setModule(module)}>
+											Edit
+										</button>
+									</div>
+								</div>
 							</h2>
 							<div className="accordion-collapse collapse show">
 								<div className="accordion-body" style={{ padding: 0 }}>
