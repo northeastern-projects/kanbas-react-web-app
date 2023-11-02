@@ -4,6 +4,8 @@ import Dashboard from './dashboard';
 import Courses from './courses';
 import db from './db';
 import { useState } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function Kanbas() {
 	const [courses, setCourses] = useState(db.courses);
@@ -35,31 +37,33 @@ function Kanbas() {
 	};
 
 	return (
-		<div className="row">
-			<div className="col-auto">
-				<KanbasNavigation />
+		<Provider store={store}>
+			<div className="row">
+				<div className="col-auto">
+					<KanbasNavigation />
+				</div>
+				<div className="col">
+					<Routes>
+						<Route path="/" element={<Navigate to="dashboard" />} />
+						<Route path="account" element={<h1>Account</h1>} />
+						<Route
+							path="dashboard"
+							element={
+								<Dashboard
+									courses={courses}
+									course={course}
+									setCourse={setCourse}
+									addNewCourse={addNewCourse}
+									deleteCourse={deleteCourse}
+									updateCourse={updateCourse}
+								/>
+							}
+						/>
+						<Route path="courses/:courseId/*" element={<Courses courses={courses} />} />
+					</Routes>
+				</div>
 			</div>
-			<div className="col">
-				<Routes>
-					<Route path="/" element={<Navigate to="dashboard" />} />
-					<Route path="account" element={<h1>Account</h1>} />
-					<Route
-						path="dashboard"
-						element={
-							<Dashboard
-								courses={courses}
-								course={course}
-								setCourse={setCourse}
-								addNewCourse={addNewCourse}
-								deleteCourse={deleteCourse}
-								updateCourse={updateCourse}
-							/>
-						}
-					/>
-					<Route path="courses/:courseId/*" element={<Courses courses={courses} />} />
-				</Routes>
-			</div>
-		</div>
+		</Provider>
 	);
 }
 

@@ -1,38 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import db from '../../db';
 import './list.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCircleCheck, faEllipsisVertical, faPlus, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { useSelector, useDispatch } from 'react-redux';
+import { addModule, deleteModule, updateModule, setModule } from './modulesReducer';
 
 function ModuleList() {
+	const modules = useSelector((state) => state.modulesReducer.modules);
+	const module = useSelector((state) => state.modulesReducer.module);
+	const dispatch = useDispatch();
+
 	const { courseId } = useParams();
-	const [modules, setModules] = useState(db.modules);
-	const [module, setModule] = useState({
-		name: 'New Module',
-		description: 'New Description',
-		course: courseId
-	});
-
-	const addModule = () => {
-		setModules([...modules, { ...module, _id: new Date().getTime().toString() }]);
-	};
-
-	const deleteModule = (moduleId) => {
-		setModules(modules.filter((module) => module._id !== moduleId));
-	};
-
-	const updateModule = () => {
-		setModules(
-			modules.map((m) => {
-				if (m._id === module._id) {
-					return module;
-				} else {
-					return m;
-				}
-			})
-		);
-	};
 
 	return (
 		<div>
@@ -49,7 +28,7 @@ function ModuleList() {
 				<div className="d-flex flex-row">
 					<input
 						type="text"
-						onChange={(e) => setModule({ ...module, name: e.target.value })}
+						onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
 						value={module.name}
 						className="form-control"
 						placeholder="Module Name"
@@ -57,17 +36,17 @@ function ModuleList() {
 					/>
 					<input
 						type="text"
-						onChange={(e) => setModule({ ...module, description: e.target.value })}
+						onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}
 						value={module.description}
 						className="form-control"
 						placeholder="Module Description"
 						style={{ width: '200px', marginRight: '5px' }}
 					/>
 					<div className="btn-group" role="group">
-						<button onClick={addModule} className="btn btn-danger">
+						<button onClick={() => dispatch(addModule({ ...module, course: courseId }))} className="btn btn-danger">
 							<FontAwesomeIcon icon={faPlus} /> Add
 						</button>
-						<button onClick={updateModule} className="btn btn-primary">
+						<button onClick={() => dispatch(updateModule(module))} className="btn btn-primary">
 							<FontAwesomeIcon icon={faCheck} /> Update
 						</button>
 						<button className="btn btn-light">
@@ -88,10 +67,10 @@ function ModuleList() {
 								<div className="accordion-button bg-light d-flex flex-row">
 									<span>{module.name}</span>
 									<div style={{ position: 'absolute', right: '50px' }}>
-										<button className="btn btn-danger" onClick={() => deleteModule(module._id)}>
+										<button className="btn btn-danger" onClick={() => dispatch(deleteModule(module._id))}>
 											Delete
 										</button>
-										<button className="btn btn-success" style={{ marginLeft: '5px' }} onClick={() => setModule(module)}>
+										<button className="btn btn-success" style={{ marginLeft: '5px' }} onClick={() => dispatch(setModule(module))}>
 											Edit
 										</button>
 									</div>
