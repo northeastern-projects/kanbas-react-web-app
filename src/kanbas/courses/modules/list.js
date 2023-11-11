@@ -4,7 +4,7 @@ import './list.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCircleCheck, faEllipsisVertical, faPlus, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
-import { addModule, deleteModule, updateModule, setModule } from './modulesReducer';
+import { addModule, deleteModule, updateModule, setModule } from './reducer';
 
 function ModuleList() {
 	const modules = useSelector((state) => state.modulesReducer.modules);
