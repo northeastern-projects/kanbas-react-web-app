@@ -29,6 +29,9 @@ function Home() {
 				<Link to="/labs/a4" className={`list-group-item `}>
 					Assignment 4
 				</Link>
+				<Link to="/labs/a5" className={`list-group-item `}>
+					Assignment 5
+				</Link>
 			</list>
 		</div>
 	);
