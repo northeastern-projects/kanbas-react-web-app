@@ -15,7 +15,7 @@ function Courses() {
 	const { courseId } = useParams();
 	const { pathname } = useLocation();
 
-	const URL = 'http://localhost:4000/api/courses';
+	const URL = 'https://kanbas-node-server-app-production-bcc9.up.railway.app/api/courses';
 
 	const [course, setCourse] = useState({});
 
