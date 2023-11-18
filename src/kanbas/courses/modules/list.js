@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './list.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCircleCheck, faEllipsisVertical, faPlus, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
-import { addModule, deleteModule, updateModule, setModule } from './reducer';
+import { addModule, deleteModule, updateModule, setModule, setModules } from './reducer';
+import { createModule, findModulesForCourse, deleteModule as deleteModuleClient, updateModule as updateModuleClient } from './client';
 
 function ModuleList() {
 	const modules = useSelector((state) => state.modulesReducer.modules);
@@ -12,6 +13,23 @@ function ModuleList() {
 	const dispatch = useDispatch();
 
 	const { courseId } = useParams();
+
+	useEffect(() => {
+		findModulesForCourse(courseId).then((modules) => dispatch(setModules(modules)));
+	}, [courseId]);
+
+	const handleAddModule = () => {
+		createModule(courseId, module).then((module) => dispatch(addModule(module)));
+	};
+
+	const handleDeleteModule = (moduleId) => {
+		deleteModuleClient(moduleId).then(() => dispatch(deleteModule(moduleId)));
+	};
+
+	const handleUpdateModule = async () => {
+		await updateModuleClient(module);
+		dispatch(updateModule(module));
+	};
 
 	return (
 		<div>
@@ -43,10 +61,10 @@ function ModuleList() {
 						style={{ width: '200px', marginRight: '5px' }}
 					/>
 					<div className="btn-group" role="group">
-						<button onClick={() => dispatch(addModule({ ...module, course: courseId }))} className="btn btn-danger">
+						<button onClick={handleAddModule} className="btn btn-danger">
 							<FontAwesomeIcon icon={faPlus} /> Add
 						</button>
-						<button onClick={() => dispatch(updateModule(module))} className="btn btn-primary">
+						<button onClick={() => handleUpdateModule(module)} className="btn btn-primary">
 							<FontAwesomeIcon icon={faCheck} /> Update
 						</button>
 						<button className="btn btn-light">
@@ -67,7 +85,7 @@ function ModuleList() {
 								<div className="accordion-button bg-light d-flex flex-row">
 									<span>{module.name}</span>
 									<div style={{ position: 'absolute', right: '50px' }}>
-										<button className="btn btn-danger" onClick={() => dispatch(deleteModule(module._id))}>
+										<button className="btn btn-danger" onClick={() => handleDeleteModule(module._id)}>
 											Delete
 										</button>
 										<button className="btn btn-success" style={{ marginLeft: '5px' }} onClick={() => dispatch(setModule(module))}>
@@ -90,7 +108,7 @@ function ModuleList() {
 										</li>
 										<li className="list-group-item wd-list-indent">
 											<div className="wd-list-container">
-												<a href="#">
+												<a href="#creating">
 													Creating a React application <FontAwesomeIcon icon={faUpRightFromSquare} />
 												</a>
 												<span className="wd-right">
