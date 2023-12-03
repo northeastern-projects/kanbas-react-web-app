@@ -13,6 +13,9 @@ function Home() {
 				<Link to="/kanbas" className={`list-group-item `}>
 					Kanbas
 				</Link>
+				<Link to="/project" className={`list-group-item `}>
+					Project
+				</Link>
 				<li className={'list-group-item'}>
 					<a style={{ textDecoration: 'none', color: '#111' }} href="/labs/a1/index.html">
 						Assignment 1
